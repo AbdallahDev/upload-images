@@ -45,23 +45,23 @@ async function renderImages(urls) {
 
     const loadingEl = document.createElement('h1')
     loadingEl.textContent = "Loading images, please wait......"
-    containerEl.innerHTML += loadingEl.outerHTML
+    containerEl.innerHTML = loadingEl.outerHTML
+
+    const imageViewerEl = document.createElement('div')
+    imageViewerEl.id = "imageViewer"
+
+    const images = urls.map((url) => getImage(url))
 
     try {
-        const imageViewerEl = document.createElement('div')
-        imageViewerEl.id = "imageViewer"
-
-        const images = urls.map((url) => getImage(url))
         const results = await Promise.all(images)
+        containerEl.innerHTML = ""
         results.forEach((img) => {
-            imageViewerEl.innerHTML += img.outerHTML
+            imageViewerEl.append(img)
         })
-
-        containerHtml += imageViewerEl.outerHTML
-        containerEl.innerHTML = containerHtml
+        containerEl.appendChild(imageViewerEl)
     } catch (error) {
-        console.log(error)
-        containerEl.innerHTML = `<h1 id='error'>Something wrong, Images failed to render.<br>Please try again.</h1>`
+        console.error(error)
+        containerEl.innerHTML = `<h1>Something Wrong, Please try again.</h1>`
     }
 }
 
@@ -72,7 +72,7 @@ function getImage(url) {
             img.src = url
             img.addEventListener('load', () => resolve(img))
             img.addEventListener('error', () => reject(new Error))
-        }, 5000)
+        }, 10000)
     })
 }
 
