@@ -86,3 +86,27 @@ button {
   border-radius: 7px;
   padding: 9px 0;
 }
+
+#imageViewer {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+}
+
+#container img {
+  margin-bottom: 28px;
+  height: 425px;
+  box-shadow: 16px 13px 20px 6px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  /* ظل ناعم للتحميل */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+#error {
+  color: #ff4d4d; /* لون أحمر مميز للخطأ */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
