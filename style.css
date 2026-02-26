@@ -33,7 +33,7 @@ h4 {
 }
 
 #title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 900;
   flex: 1;
   flex-grow: 0;
@@ -56,7 +56,7 @@ h4 {
   display: flex;
   width: 247px;
   align-items: center;
-  border: 2px #6CB4EE solid;
+  border: 2px #6cb4ee solid;
   padding: 6px 10px;
   box-sizing: border-box;
   margin: 6px;
@@ -81,7 +81,7 @@ button {
   color: white;
   flex: 1;
   flex-grow: 0;
-  background-color: #6CB4EE;
+  background-color: #6cb4ee;
   border: none;
   border-radius: 7px;
   padding: 9px 0;
